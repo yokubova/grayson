@@ -1,0 +1,497 @@
+@import url(./fonts.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: "Roboto";
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 1140px;
+}
+
+.box {
+    width: 80%;
+    background: blue;
+    margin: 20px auto;
+    height: 200px;
+    position: relative;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background: red;
+    /* left: 50px; */
+    right: 50px;
+    /* top: 50px; */
+    bottom: 50px;
+    /* position: relative; */
+    /* position: absolute; */
+    position: fixed;
+}
+
+.nav {
+    padding: 25px 0;
+    position: relative;
+}
+
+.nav__burger {
+    border: none;
+    outline: none;
+    background: #41A28E;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    display: none;
+}
+
+.nav__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    font-family: "Playfair";
+    font-size: 12px;
+}
+
+.dropdown {
+    position: absolute;
+    border: 1px solid #E5E5E5;
+    min-width: 160px;
+    border-radius: 2px;
+    left: 0;
+    top: 100%;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+    background: #fff;
+}
+
+.menu__icon {
+    transition: 0.5s;
+}
+
+.menu__item:hover .menu__icon {
+    transform: rotate(180deg);
+}
+
+.menu__item:hover .dropdown {
+    opacity: 1;
+    z-index: 1;
+}
+
+.menu__item {
+    position: relative;
+    padding: 12px 0;
+}
+
+.dropdown__link {
+    padding: 12px 30px;
+    display: block;
+    position: relative;
+}
+
+.dropdown__link::after {
+    content: '';
+    background: #E5E5E5;
+    height: 1px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+li:last-of-type .dropdown__link::after {
+    display: none;
+}
+
+.search {
+    display: flex;
+    gap: 4px; 
+}
+
+.search * {
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+
+.search__input {
+    font-family: "Roboto";
+    border: 1px solid #41A28E;
+    padding: 6px 12px;
+}
+
+.search__input::placeholder {
+    color: #4B4848;
+}
+
+.search__btn {
+    background: #41A28E;
+    color: #fff;
+    padding: 7px;
+}
+
+.header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header__content {
+    font-family: "Playfair";
+    flex-grow: 1;
+    /* background-image: url(../img/header-bg.jpg);
+    background-size: cover;
+    background-position: center; */
+    background: url(../img/header-bg.jpg) center / cover no-repeat ;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header__title {
+    font-size: 50px;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    font-weight: 400;
+    padding: 17px 61px;
+}
+
+.header__desc {
+    font-size: 22px;
+    margin-bottom: 50px;
+    /* text-shadow: -20px -20px 5px #00f; */
+    /* box-shadow: 20px 20px 5px 20px #000; */
+    text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.38);
+}
+
+.header__link {
+    background: #fff;
+    padding: 22px 34px;
+    color: #000;
+    transition: 0.5s;
+    font-size: 12px;
+}
+
+.header__link:hover {
+    background: #41A28E;
+    color: #fff;
+}
+
+.ecom {
+    padding-top: 48px;
+    padding-bottom: 72px;
+}
+
+.ecom__card {
+    border: 1px solid #41A28E;
+    max-width: 255px;
+    width: 100%;
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ecom__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ecom__title {
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    font-family: "Playfair";
+    color: #fff;
+    font-size: 25px;
+    font-weight: 400;
+    background: rgba(75, 72, 72, 0.7);
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    transition: 0.5s;
+}
+
+.ecom__card:hover .ecom__title {
+    bottom: 0;
+}
+
+.ecom__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 52px;
+}
+
+.info {
+    max-width: 496px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.info__title {
+    font-size: 50px;
+    font-family: "Playfair";
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.info__desc {
+    color: #666;
+}
+
+.coll {
+    background: url(../img/jacket.jpg) center / cover;
+    padding-top: 120px;
+    padding-bottom: 112px;
+    font-family: "Playfair";
+    color: #fff;
+    background-attachment: fixed;
+}
+
+.coll__desc {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+.coll__title {
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.coll__link {
+    background: #fff;
+    color: #000;
+    padding: 18px 42px;
+    font-size: 12px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.coll__link:hover {
+    background: #41A28E;
+    color: #fff;
+}
+
+.custom {
+    padding: 50px 0;
+}
+
+.custom__card {
+    font-family: "Playfair";
+    max-width: 255px;
+    width: 100%;
+}
+
+.custom__wrapper {
+    height: 340px;
+    overflow: hidden;
+    position: relative;
+}
+
+.custom__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.custom__service {
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    color: #fff;
+    padding: 16px 18px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 23px;
+    transition: 0.5s;
+}
+
+.custom__card:hover .custom__service {
+    bottom: 0;
+}
+
+.custom__add {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.custom__sale {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #4B484B;
+    color: #fff;
+    font-size: 12px;
+    font-family: "Roboto";
+    padding: 10px 18px;
+}
+
+.custom__title {
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 43px;
+}
+
+.custom__desc {
+    font-size: 18px;
+    margin-top: 6px;
+    font-feature-settings: "lnum";
+}
+
+.custom__desc span {
+    color: #666;
+    text-decoration: line-through;
+    margin-right: 15px;
+    text-transform: uppercase;
+}
+
+.custom__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 70px;
+}
+
+.footer {
+    background: #000;
+    color: #fff;
+    padding-top: 36px;
+}
+
+.footer__copy {
+    background: #121212;
+    color: #666;
+    font-size: 18px;
+    text-align: center;
+    padding: 40px;
+    margin-top: 36px;
+}
+
+.footer__copy span {
+    text-shadow: 0 0 4px #e52d27;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer__card {
+    max-width: 255px;
+    width: 100%;
+}
+
+.footer__title {
+    font-family: "Playfair";
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.footer__menu {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.footer__menu i {
+    font-size: 21px;
+}
+
+.footer__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__menu_gap {
+    gap: 12px;
+    padding-top: 6px;
+}
+
+.footer__form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.footer__form * {
+    outline: none;
+    border: none;
+    font-family: "Roboto";
+}
+
+.footer__input {
+    padding: 14px 10px;
+    font-size: 14px;
+}
+
+.footer__input::placeholder {
+    color: #909090;
+}
+
+.footer__btn {
+    font-size: 16px;
+    background: #41A28E;
+    color: #fff;
+    padding: 12px 10px;
+}
+
+.footer__desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.footer__service {
+    display: flex;
+    gap: 25px;
+    font-size: 30px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #41A28E;
+    border-radius: 5px;
+}
